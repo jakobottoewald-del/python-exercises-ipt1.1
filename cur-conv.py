@@ -7,14 +7,13 @@ CHF = 0
 
 if cur == "USD":
 	CHF = amount / 100 * 80
-	print(f"CHF", CHF)
+	print(f"CHF, {CHF:.2f}")
 elif cur == "EUR":
 	CHF = amount / 100 * 93
-	print(f"CHF", CHF)
+	print(f"CHF, {CHF:.2f}")
 elif cur == "GBP":
 	CHF = amount / 100 * 107
-	print(f"CHF", CHF)
+	print(f"CHF, {CHF:.2f}")
 else:
 	print("unbekannt")
 
-	
