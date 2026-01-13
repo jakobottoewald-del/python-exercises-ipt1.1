@@ -12,7 +12,3 @@ if einheit == "F" or einheit == "f":
 elif einheit == "C" or einheit == "c":
     fahrenheit = wert * 9 / 5 + 32
     print(f"{wert}°C = {fahrenheit:.1f}°F")
-
-else:
-    print("Unbekannt")
-
