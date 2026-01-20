@@ -1,34 +1,40 @@
 #!/usr/bin/env python3
-
 import sys
+
+if len(sys.argv) != 2 or len(sys.argv[1]) != 2:
+    sys.exit(1)
 
 card = sys.argv[1]
 
 color = card[0]
 value = card[1]
 
-if color == "C":
-    color_name = "Clubs"
-elif color == "D":
-    color_name = "Diamonds"
-elif color == "H":
-    color_name = "Hearts"
-elif color == "S":
-    color_name = "Spades"
-else:
-    color_name = "Unbekannte Farbe"
+match color:
+    case "C":
+        color_name = "Clubs"
+    case "D":
+        color_name = "Diamonds"
+    case "H":
+        color_name = "Hearts"
+    case "S":
+        color_name = "Spades"
+    case _:
+        sys.exit(1)
 
-if value == "A":
-    value_name = "Ace"
-elif value == "X":
-    value_name = "10"
-elif value == "J":
-    value_name = "Jack"
-elif value == "Q":
-    value_name = "Queen"
-elif value == "K":
-    value_name = "King"
-else:
-    value_name = value
+match value:
+    case "A":
+        value_name = "Ace"
+    case "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9":
+        value_name = value
+    case "X":
+        value_name = "10"
+    case "J":
+        value_name = "Jack"
+    case "Q":
+        value_name = "Queen"
+    case "K":
+        value_name = "King"
+    case _:
+        sys.exit(1)
 
-print(color_name, value_name)
+print(f"{color_name} {value_name}")
