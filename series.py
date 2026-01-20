@@ -3,8 +3,8 @@ import sys
 
 zahl = int(sys.argv[1])
 length = int(sys.argv[2])
-
-i = 1
-while i <= length:
-    print(zahl * i, end=" ")
-    i = i + 1
+i = 0
+for arg in range(0, length):
+	i += zahl
+	print(i, end=" ")
+print("")
